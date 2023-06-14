@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\WebController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,9 +16,24 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/landing');
+});
+
+Route::group(['prefix' => 'landing'], function () {
+    Route::get('/', [WebController::class, 'landing'])->name('landing');
 });
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::group(['prefix' => 'user'], function () {
+    Route::redirect('/', '/user/login');
+    Route::group(['middleware' => 'guest'], function () {
+        Route::get('/login', function () {
+            return view('auth.login');
+        });
+    });
+});
+
+Route::group(['prefix' => '/user', 'middleware' => ['auth']], function () {
+    Route::get('/dashboard', [WebController::class, 'dashboard'])->name('admin.dashboard');
+});
