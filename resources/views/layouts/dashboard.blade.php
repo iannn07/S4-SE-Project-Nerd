@@ -15,7 +15,7 @@
 
     <link rel="canonical" href="https://demo-basic.adminkit.io/" />
 
-    <title>AdminKit Demo - Bootstrap 5 Admin Template</title>
+    <title>Nerd.</title>
 
     <link href="{{ asset('Admin Assets/css/app.css') }}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
@@ -47,7 +47,7 @@
                                         class="align-middle me-1" data-feather="user"></i>
                                     Home Profile</a>
                                 <a class="dropdown-item" onclick="openNewTab()"><i class="align-middle me-1"
-                                        data-feather="arrow-up-right"></i>
+                                        data-feather="arrow-up-right" href="{{ route('landing') }}"></i>
                                     Open Homepage</a>
                                 <a class="dropdown-item" href="mailto: pristian.dharmawan@binus.ac.id"><i
                                         class="align-middle me-1" data-feather="help-circle"></i> Send Email</a>
@@ -293,6 +293,11 @@
                 defaultDate: defaultDate
             });
         });
+    </script>
+    <script>
+        function openNewTab() {
+            window.open('/', '_blank');
+        }
     </script>
     @yield('user_script')
 </body>

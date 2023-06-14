@@ -2,10 +2,23 @@
 @section('content')
     <div class="container-login100">
         <div class="wrap-login100">
-            <form class="login100-form validate-form" method="POST" class="register-form" id="login-form"
-                action="{{ route('login') }}">
+            <form class="reg100-form validate-form" method="POST" class="register-form" id="login-form"
+                action="{{ route('register') }}">
                 @csrf
-                <span class="login100-form-title p-b-43"> Login to continue </span>
+                <span class="login100-form-title p-b-43"> Sign Up </span>
+
+                <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                    {{-- <input class="input100" type="text" name="email" /> --}}
+                    <input id="name" type="tesxt" class="form-control input100 @error('name') is-invalid @enderror"
+                        name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                    <span class="focus-input100"></span>
+                    <span class="label-input100">Name</span>
+                    @error('name')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
 
                 <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
                     {{-- <input class="input100" type="text" name="email" /> --}}
@@ -34,17 +47,10 @@
                     @enderror
                 </div>
 
-                <div class="flex-sb-m w-full p-t-3 p-b-32">
-                    <div class="contact100-form-checkbox">
-                        <input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me" />
-                        <label class="label-checkbox100" for="ckb1">
-                            Remember me
-                        </label>
-                    </div>
-
-                    <div>
-                        <a href="#" class="txt1"> Forgot Password? </a>
-                    </div>
+                <div class="wrap-input100 validate-input" data-validate="Password is required">
+                    <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
+                    <input id="password-confirm input100" type="password" name="password_confirmation" class="form-control input100"
+                        autocomplete="new-password" placeholder="Repeat your password">
                 </div>
 
                 <div class="container-login100-form-btn">
@@ -56,7 +62,7 @@
                 </div>
             </form>
 
-            <div class="login100-more" style="background-image: url('{{ asset('Admin Assets/Login/images/bg-01.jpg') }}')">
+            <div class="login100-more" style="background-image: url('{{ asset('Admin Assets/img/aesthetic 2.jpg') }}')">
             </div>
         </div>
     </div>

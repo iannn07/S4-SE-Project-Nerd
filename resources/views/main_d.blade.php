@@ -2,7 +2,8 @@
 @section('navigation_left')
     <div class="sidebar-content js-simplebar">
         <a class="sidebar-brand" href="#">
-            <span class="align-middle">Ian Admin</span>
+            <span class="align-middle flex d-flex"
+                style="display: flex; align-items: center; justify-content: center; font-size: 28px">Nerd.</span>
         </a>
 
         <ul class="sidebar-nav">
@@ -18,31 +19,13 @@
 
             <li class="sidebar-item" id="profile" onclick="selectChannel(this)">
                 <a class="sidebar-link" href="#">
-                    <i class="align-middle" data-feather="user"></i> <span class="align-middle">View Homepage</span>
+                    <i class="align-middle" data-feather="book-open"></i> <span class="align-middle">Learn</span>
                 </a>
             </li>
-
-            <li class="sidebar-header">
-                Edit Profile
-            </li>
-
             <li class="sidebar-item" id="btn" onclick="selectChannel(this)">
                 <a class="sidebar-link" href="#">
-                    <i class="align-middle" data-feather="terminal"></i> <span class="align-middle">Edit Home
-                        Profile
+                    <i class="align-middle" data-feather="user"></i> <span class="align-middle">Socialize
                     </span>
-                </a>
-            </li>
-            <li class="sidebar-item" id="btn" onclick="selectChannel(this)">
-                <a class="sidebar-link" href="#">
-                    <i class="align-middle" data-feather="settings"></i> <span class="align-middle">Edit
-                        Journey</span>
-                </a>
-            </li>
-            <li class="sidebar-item" id="btn" onclick="selectChannel(this)">
-                <a class="sidebar-link" href="#">
-                    <i class="align-middle" data-feather="activity"></i> <span class="align-middle">Edit
-                        Job Type</span>
                 </a>
             </li>
         </ul>
@@ -54,37 +37,6 @@
             <div class="container-fluid p-0">
 
                 <h1 class="h3 mb-3"><strong>Analytics</strong> Dashboard</h1>
-
-                <div class="row">
-                    <div class="col d-flex justify-center align-items-center">
-                        <div class="w-100">
-                            <div class="col-auto">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col mt-0">
-                                                <h5 class="card-title">Visitors</h5>
-                                            </div>
-
-                                            <div class="col-auto">
-                                                <div class="stat text-primary">
-                                                    <i class="align-middle" data-feather="users"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <h1 class="mt-1 mb-3">0</h1>
-                                        <div class="mb-0">
-                                            <span class="text-success"> <i class="mdi mdi-arrow-bottom-right"></i> 0.00%
-                                            </span>
-                                            <span class="text-muted">Since last week</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
                 <div class="row">
                     <div class="col d-flex order-2 order-xxl-3">
                         <div class="card flex-fill w-100">
